@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.realty.federa",
+      "sha256_cert_fingerprints": [
+        "SHA256: 19:7B:FB:C9:AF:18:FC:87:6D:63:B4:14:20:D5:FE:A8:41:73:C0:B7:B8:C0:44:3F:AD:5E:A1:46:E0:2A:79:56"
+      ]
+    }
+  }
+]

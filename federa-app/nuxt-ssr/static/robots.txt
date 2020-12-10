@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: *search?q=
+
+Host: https://federa.com
+
+Sitemap: https://federa.com/sitemap.xml

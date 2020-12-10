@@ -1,0 +1,87 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "cache-control: public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "static/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/.well-known/apple-app-site-association",
+        "function": "iosLink"
+      },
+      {
+        "source": "/.well-known/assetlinks.json",
+        "function": "androidLink"
+      },
+      {
+        "source": "/sitemaps/sitemap-*.xml",
+        "function": "generateSitemap"
+      },
+      {
+        "source": "/sitemap.xml",
+        "function": "sitemapIndex"
+      },
+      {
+        "source": "**",
+        "function": "ssrapp"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/contact",
+        "destination": "https://smartlistings.federa.com/contact",
+        "type": 301
+      },
+      {
+        "source": "/faq",
+        "destination": "https://co.federa.com/questions",
+        "type": 301
+      },
+      {
+        "source": "/ourteam",
+        "destination": "https://co.federa.com/leadership",
+        "type": 301
+      },
+      {
+        "source": "/list-your-home",
+        "destination": "https://smartlistings.federa.com",
+        "type": 301
+      }
+    ],
+    "appAssociation": "NONE"
+  }
+}
